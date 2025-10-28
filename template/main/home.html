@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block title %}خانه{% endblock %}
+
+{% block header %}
+    <nav class="navbar">
+        <div>
+            <ul class="navbar__ul">
+                <li><a href="{% url 'home' %}">صفحه اصلی</a></li>
+                <li><a href="{% url 'intro' %}">معرفی باغ</a></li>
+                <li><a href="#">گالری</a></li>
+                <li><a href="#">خاطرات بازدید</a></li>
+                <li><a href="#">پژوهش و آموزش</a></li>
+                <li><a href="#">تماس با ما</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="navbar__p">خانه</p>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block main %}
+    <h1>به سایت ما خوش آمدید</h1>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+
