@@ -1,0 +1,11 @@
+# Ignore virtualenv
+.wenv/
+
+# Ignore __pycache__
+__pycache__
+
+# Ignore database
+*.sqlite3
+
+# Ignore migrations
+migrations/
