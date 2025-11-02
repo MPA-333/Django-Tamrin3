@@ -29,3 +29,10 @@ def gardenView(request):
         "load_media": settings.MEDIA_URL
     }
     return render(request, "introduction/garden.html", context)
+
+
+def visit_wayView(request):
+    context = {
+        "load_media": settings.MEDIA_URL
+    }
+    return render(request, "introduction/visit_way.html", context)
