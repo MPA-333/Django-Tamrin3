@@ -22,3 +22,10 @@ def museumView(request):
         "load_media": settings.MEDIA_URL
     }
     return render(request, "introduction/museum.html", context)
+
+
+def gardenView(request):
+    context = {
+        "load_media": settings.MEDIA_URL
+    }
+    return render(request, "introduction/garden.html", context)
