@@ -1,0 +1,3 @@
+media/image/*.{png,jpg,pdf} binary
+
+media/image/department/*.{png,jpg,pdf} binary
