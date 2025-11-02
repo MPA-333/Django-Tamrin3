@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+
+{% block title %}درباره ما{% endblock %}
+
+{% block header %}
+    <nav class="navbar">
+        <div>
+            <ul class="navbar__ul">
+                <li><a href="{% url 'home' %}">خانه</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="navbar__p">درباره ما</p>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block main %}
+    <h1>تماس با ما</h1>
+    <p>
+        <dl>
+            <dt>آدرس : </dt>
+            <dd>تهران، خیابان ولیعصر (شمال)، بعد از سه راه زعفرانیه، نرسیده به میدان تجریش، خیابان باغ فردوس</dd>
+
+            <dt>شماره تماس : </dt>
+            <dd>۰۹۱۴۱۲۳۴۵۶۷ - ۰۹۲۱۱۲۳۴۵۶۷</dd>
+
+            <dt>دانلود مسیر بازدید : </dt>
+            <dd><a href="{{ load_media }}image/map.pdf" download="map.pdf">دانلود</a></dd>
+        </dl>
+    </p>
+    <hr/>
+    <p style="text-align: center;">شما همچنین میتوانید به ادمین سایت پیام بفرستید</p>
+    <div style="background-color: hsl(250, 50%, 50%); width: 600px; margin: 0% auto; border-radius: 6px;">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <table style="width: 600px;">
+                {{ form.as_table }}
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input style="font-family: Yekan; font-weight: bolder; width: 500px; " type="submit" value="ارسال">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div>
+        <br>
+    </div>
+    
+{% endblock %}
+
+{% block footer %}{% endblock %}

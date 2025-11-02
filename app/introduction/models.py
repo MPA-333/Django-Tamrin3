@@ -47,15 +47,15 @@ class TicketPrice(models.Model):
 
 
 class Message(models.Model):
-    code = models.PositiveIntegerField(verbose_name="کد", blank=False, null=False, unique=True, default=1)
+    code = models.PositiveIntegerField(verbose_name="کد", blank=False, null=False, default=1)
     name = models.CharField(verbose_name="نام", max_length=120, blank=False, null=False)
-    family = models.CharField(verbose_name="نام خانوادگی", blank=True)
+    family = models.CharField(verbose_name="نام خانوادگی", max_length=120, blank=True)
     email = models.EmailField(verbose_name="ایمیل", unique=True)
     subject = models.CharField(verbose_name="موضوع پیام", max_length=350, blank=False, null=False)
     text = models.TextField(verbose_name="متن پیام", blank=False, null=False)
     registerDate = models.DateTimeField(verbose_name="تاریخ ثبت پیام", blank=False, null=False, default=timezone.now)
     STATUS = [(True, "فعال"),(False, "غیرفعال")]
-    isActive = models.BooleanField(verbose_name="وضعیت پیام", choices=STATUS, blank=False, null=False)
+    isActive = models.BooleanField(verbose_name="وضعیت پیام", choices=STATUS, blank=False, null=False, default=False)
 
     class Meta:
         verbose_name = "پیام"
