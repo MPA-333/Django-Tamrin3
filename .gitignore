@@ -7,5 +7,6 @@ __pycache__
 # Ignore database
 *.sqlite3
 
-# Ignore migrations
-migrations/
+# Ignore migrations except __init__.py
+app/**/migrations/*
+!app/**/migrations/__init__.py
