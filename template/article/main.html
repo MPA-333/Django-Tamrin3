@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block title %}آموزش و پرورش{% endblock title %}
+
+{% block header %}
+    <nav class="navbar">
+        <div>
+            <ul class="navbar__ul">
+                <li><a href="{% url 'home' %}">خانه</a></li>
+                <li><a href="#">مقالات</a></li>
+                <li><a href="#">کارگاه ها</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="navbar__p">آموزش و پرورش</p>
+        </div>
+    </nav>
+{% endblock header %}
+
+{% block main %}
+    <h2>به قسمت آموزش و پرورش خوش آمدید</h2>
+    <p>این قسمت فعلا خالی است لطفا بخش مقالات را امتحان کنید.</p>
+{% endblock main %}
+
+{% block footer %}{% endblock footer %}
