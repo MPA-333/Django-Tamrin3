@@ -33,7 +33,7 @@
             
             {% for article in article_list %}
                 <tr>
-                    <td><img style="width: 50px; height: 50px;" src="{{ load_media }}/{{ article.image }}" alt="تصویر مقاله"></td>
+                    <td><img style="width: 50px; height: 50px;" src="{{ load_media }}{{ article.image }}" alt="تصویر مقاله"></td>
                     <td>{{ article.title }}</td>
                     
                     <td>{{ article.text }}</td>
@@ -47,7 +47,7 @@
                     <td>{{ article.articleGroup }}</td>
                     <td>{{ article.updateDate }}</td>
                     <td>{{ article.seen }}</td>
-                    <td><a href="#">جزئیات</a></td>
+                    <td><a href="{% url 'article_detail' article.pk %}">جزئیات</a></td>
             {% empty %}
                 <tr>
                     <td rowspan="8">لیست مقالات خالی است</td>

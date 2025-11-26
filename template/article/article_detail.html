@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+
+{% block title %}جزئیات مقاله{% endblock title %}
+
+{% block header %}
+    <nav class="navbar">
+        <div>
+            <ul class="navbar__ul">
+                <li><a href="{% url 'home' %}">خانه</a></li>
+                <li><a href="{% url 'articles' %}">صفحه قبلی</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="navbar__p">جزئیات</p>
+        </div>
+    </nav>
+{% endblock header %}
+
+{% block main %}
+    <h1>{{ article_detail.title }}</h1>
+    <div>
+        <ul>
+            <li><img src="{{load_media}}{{article_detail.image}}" style="width: 50px; height: 50px;" alt="تصویر اینجا بود به خدا"></li>
+            <li>گروه مقاله : {{article_detail.articleGroup}}</li>
+            <li>خلاصه : {{article_detail.text}}</li>
+            <li>کلمات کلیدی : {{article_detail.word}}</li>
+            <li>چکیده مطالب : {{article_detail.description}}</li>
+            <li>فایل مقاله : <a href="{% url 'download_pdf' article_detail.pk %}">دانلود PDF</a></li>
+            <li>تاریخ ثبت : {{article_detail.registerDate}}</li>
+            <li>تاریخ انتشار : {{article_detail.publishDate}}</li>
+            <li>آخرین بروز رسانی : {{article_detail.updateDate}}</li>
+            <li>تعداد بازدید : {{article_detail.seen}}</li>
+        </ul>
+    </div>
+    
+{% endblock main %}
+
+{% block footer %}{% endblock footer %}
