@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+
+{% block title %}لیست مقالات{% endblock title %}
+
+{% block header %}
+    <nav class="navbar">
+        <div>
+            <ul class="navbar__ul">
+                <li><a href="{% url 'home' %}">خانه</a></li>
+                <li><a href="{% url 'e_home' %}">صفحه قبلی</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="navbar__p">مقالات</p>
+        </div>
+    </nav>
+{% endblock header %}
+
+{% block main %}
+    <h1>لیست مقالات</h1>
+    <div>
+        <ul>
+            {% for article in article_list %}
+                <li>{{ article.title }}</li>
+                <li>{{ article.image }}</li>
+                <li>{{ article.text }}</li>
+                <li>{{ article.author }}</li>
+                <li>گروه : {{ article.articleGoup }} | آخرین بروز رسانی : {{ article.updateDate }} | تعداد بازدید : {{ article.seen }}</li>
+                <li><a href="#">جزئیات</a></li>
+            {% empty %}
+                <li>لیست مقالات خالی است</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+{% endblock main %}
+
+{% block footer %}{% endblock footer %}

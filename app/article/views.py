@@ -9,4 +9,6 @@ class MainView(TemplateView):
 
 class ArticleView(ListView):
     model = Article
-    template_name = ""
+    context_object_name = "article_list"
+    template_name = "article/article_list.html"
+
