@@ -19,18 +19,42 @@
 {% block main %}
     <h1>لیست مقالات</h1>
     <div>
-        <ul>
+        <table border="1">
+            <tr>
+                <th>تصویر</th>
+                <th>عنوان</th>
+                <th>خلاصه</th>
+                <th>نویسنده</th>
+                <th>گروه</th>
+                <th>آخرین بروز رسانی</th>
+                <th>تعداد بازدید</th>
+                <th>توضیحات</th>
+            </tr>
+            
             {% for article in article_list %}
-                <li>{{ article.title }}</li>
-                <li>{{ article.image }}</li>
-                <li>{{ article.text }}</li>
-                <li>{{ article.author }}</li>
-                <li>گروه : {{ article.articleGoup }} | آخرین بروز رسانی : {{ article.updateDate }} | تعداد بازدید : {{ article.seen }}</li>
-                <li><a href="#">جزئیات</a></li>
+                <tr>
+                    <td><img style="width: 50px; height: 50px;" src="{{ load_media }}/{{ article.image }}" alt="تصویر مقاله"></td>
+                    <td>{{ article.title }}</td>
+                    
+                    <td>{{ article.text }}</td>
+                    <td>
+                        {% for author in article.author.all %}
+                            {{ forloop.counter }}-{{ author.name }} <br>
+                        {% empty %}
+                            نویسنده ندارد
+                        {% endfor %}
+                    </td>
+                    <td>{{ article.articleGroup }}</td>
+                    <td>{{ article.updateDate }}</td>
+                    <td>{{ article.seen }}</td>
+                    <td><a href="#">جزئیات</a></td>
             {% empty %}
-                <li>لیست مقالات خالی است</li>
+                <tr>
+                    <td rowspan="8">لیست مقالات خالی است</td>
+                </tr>    
             {% endfor %}
-        </ul>
+                </tr>
+        </table>
     </div>
     
 {% endblock main %}
