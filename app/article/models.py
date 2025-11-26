@@ -71,7 +71,7 @@ class ArticleGroup(models.Model):
 
 
 class Article(models.Model):
-    aticleGroup = models.ForeignKey(
+    articleGroup = models.ForeignKey(
         ArticleGroup,
         on_delete=models.CASCADE,
         verbose_name="گروه مقاله",
