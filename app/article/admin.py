@@ -22,8 +22,6 @@ class AuthorAdmin(admin.ModelAdmin):
 class ArticleAdmin(admin.ModelAdmin):
     list_display = [
         "title",
-        "articleGroup",
-        "author",
         "image",
         "slug",
         "text",
