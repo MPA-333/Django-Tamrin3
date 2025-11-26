@@ -31,18 +31,26 @@ class Author(models.Model):
         blank=True,
         null=True,
     )
-    # تحصیلات
-    # عنوان شغلی
+    education = models.CharField(
+        max_length=128,
+        verbose_name="تحصیلات",
+    )
+    job = models.CharField(
+        max_length=128,
+        verbose_name="عنوان شغلی",
+    )
     isActive = models.BooleanField(
         verbose_name="وضعیت فعال بودن",
         default=True,
     )
 
-    # === #
     def __str__(self):
         return f"{self.name} {self.family} {self.phone}"
 
-    # ===#
+    class Meta:
+        verbose_name = "نویسنده"
+        verbose_name_plural = "نویسندگان"
+        db_table = "T_Author"
 
 
 class ArticleGroup(models.Model):
@@ -53,11 +61,13 @@ class ArticleGroup(models.Model):
         null=False,
     )
 
-    # === #
     def __str__(self):
         return f"{self.title}"
 
-    # ===#
+    class Meta:
+        verbose_name = "گروه مقاله"
+        verbose_name_plural = "گروه مقالات"
+        db_table = "T_ArticleGroup"
 
 
 class Article(models.Model):
@@ -129,11 +139,13 @@ class Article(models.Model):
         default=0,
     )
 
-    # === #
     def __str__(self):
         return f"{self.title} {self.text}"
 
-    # ===#
+    class Meta:
+        verbose_name = "مقاله"
+        verbose_name_plural = "مقالات"
+        db_table = "T_Article"
 
 
 class ArticleGallery(models.Model):
@@ -147,8 +159,10 @@ class ArticleGallery(models.Model):
         verbose_name="نام تصاویر",
     )
 
-    # === #
     def __str__(self):
         return f"{self.article} {self.image}"
 
-    # ===#
+    class Meta:
+        verbose_name = "گالری مقاله"
+        verbose_name_plural = "گالری مقالات"
+        db_table = "T_ArticleGallery"
