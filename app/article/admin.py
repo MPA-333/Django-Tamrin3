@@ -35,7 +35,7 @@ class ArticleAdmin(admin.ModelAdmin):
         "isActive",
     ]
     prepopulated_fields = {"slug": ("title", "author")}
-    ordering = ["title", "author", "isActive"]
+    ordering = ["title", "isActive"]
 
 
 @admin.register(ArticleGroup)
